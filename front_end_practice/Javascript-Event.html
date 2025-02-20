@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1">这是一个ID选择器标签</div>
+    <div class="box2">这是一个类选择器标签</div>
+
+    <div>普通的div标签</div>
+    <div>普通的div标签</div>
+    <button>点击按钮</button>
+    <button onclick="click_event()">这是一个点击事件按钮</button>
+
+    <input type="text" onfocus="focus_event()" onblur="blur_event()">
+    <script>
+        //点击事件
+        function click_event(){
+            alert("你点击了按钮");
+        }
+        //聚焦事件
+        function focus_event(){
+            console.log("你聚焦了按钮");
+        }
+        //失焦事件
+        function blur_event(){
+            console.log("你失焦了按钮");
+        }
+        // 获取元素
+        var element_id = document.getElementById("box1");
+        console.log(element_id);
+        var element_class = document.getElementsByClassName("box2");
+        console.log(element_class);
+        var element_tag = document.getElementsByTagName("div");
+        console.log(element_tag);
+
+        // 修改 box1 的内容为跳转链接
+        element_id.innerHTML='<a href="#">跳转链接</a>';
+        // 修改 box2 的内容为跳转链接
+        element_class[0].innerHTML='<a href="#">跳转链接</a>';
+
+        // 修改第一个 div 元素的样式
+        element_tag[0].style.color='red';
+        element_tag[0].style.fontSize='20px';
+        var button_element = document.getElementsByTagName("button");
+        console.log(button_element);
+        // 为第一个按钮添加点击事件处理函数
+        button_element[0].onclick = function(){
+            alert("你点击了按钮");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Example</title>
+    <style>
+        /* 相对定位 */
+     .relative {
+            position: relative;
+            width: 50px;
+            height: 300px;
+            background-color: lightblue;
+            margin: 50px;
+            padding: 20px;
+            border: 2px dashed black;
+        }
+        /* 相对定位元素中的子元素，用于展示相对定位,
+        left: 50px; 和 top: 50px; 表示该元素相对于其原始位置向右偏移 50 像素，向下偏移 50 像素。
+相对定位元素在页面上仍然占据原来的空间，但可以通过 left、top、right 和 bottom 属性进行位置的微调。 */
+     .relative-child {
+            position: relative;
+            left: 20px;
+            top: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: lightyellow;
+            border: 2px solid red;
+        }
+        /* 绝对定位，由于.absolute 元素的父元素 .parent 是相对定位元素，
+        所以 .absolute 元素会相对于 .parent 元素进行定位。
+left: 100px; 和 top: 100px; 表示该元素相对于 .parent 元素的左上角向右偏移 100 像素，向下偏移 100 像素*/
+     .absolute {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            width: 150px;
+            height: 150px;
+            background-color: lightgreen;
+            border: 2px solid green;
+        }
+        /* 父元素设置相对定位，作为绝对定位元素的参考 */
+     .parent {
+            position: relative;
+            width: 50px;
+            height: 400px;
+            border: 2px solid black;
+            margin: 50px;
+            padding: 20px;
+        }
+    /* 固定定位 */
+    .fixed {
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div class="relative">
+        相对定位元素，相对于自身原始位置偏移。
+        <div class="relative-child">
+            相对定位子元素，相对于父元素偏移。
+        </div>
+    </div>
+    <div class="parent">
+        父元素（相对定位），作为绝对定位元素的参考。
+        <div class="absolute">
+            绝对定位元素，相对于最近的已定位父元素（这里是.parent）偏移。
+        </div>
+    </div>
+    <div class="fixed">
+        固定定位元素，相对于浏览器窗口偏移。
+    </div>
+</body>
+</html>

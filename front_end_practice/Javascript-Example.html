@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Importation</title>
+</head>
+<body>
+    <h1>Javascript的导入方式</h1>
+    <p>在HTML中,有三种方式可以导入JavaScript文件:</p>
+    <ul>
+        <li>内部JavaScript</li>
+        <li>外部JavaScript</li>
+        <li>行内JavaScript</li>
+    </ul>
+    <h2>内部JavaScript</h2>
+    <p>内部JavaScript是直接写在HTML文件中的JavaScript代码。内部JavaScript的优点是可以直接访问HTML文件中的元素，但是不利于代码的维护。</p>
+    <h3>示例：</h3>
+    <script>
+        console.log("Hello,内部JavaScript");
+    </script>
+    <h2>外部JavaScript</h2>
+    <p>外部JavaScript是将JavaScript代码写在一个单独的文件中，然后通过&lt;script&gt;标签将其导入到HTML文件中。外部JavaScript的优点是便于代码的维护，但是不可以直接访问HTML文件中的元素。</p>
+    <h3>示例：</h3>
+    <script
+        src="./js/myscript.js">
+    </script>
+    <h2>行内JavaScript</h2>
+    <p>行内JavaScript是将JavaScript代码写在HTML标签的属性中。行内JavaScript的优点是可以直接访问HTML文件中的元素，但是不利于代码的维护。</p>
+    <h3>示例：</h3>
+    <script>
+        console.log("Hello,行内JavaScript");
+        alert("你好，内联样式弹窗")
+    </script>
+    <script>
+    let age=18;
+    if(age>=18){
+        console.log("成年人"); 
+    }else{
+        console.log("未成年人");
+    }
+    console.log("for循环");
+    for(let i=0;i<10;i++){
+        console.log(i);
+    }
+    console.log("while循环");
+    let j=0;
+    while(j<5){
+        console.log(j);
+        j++;
+    }
+    console.log("do-while循环");
+    let k=0;
+    do{
+        console.log(k);
+        k++;
+    }while(k<3);
+    function myFunction(){
+        console.log("Hello,函数");
+        return 0;
+    }
+    myFunction();
+    function myFunction_with_return(){
+        return "Hello,函数";
+    }
+    myFunction_with_return();
+    let a=myFunction_with_return();
+    console.log(a);
+    console.log(myFunction_with_return());
+    function myFunction_with_parameter(name){
+        return "Hello,"+name;
+    }
+    myFunction_with_parameter("张三");
+    myFunction_with_parameter("李四");
+</script>
+
+</body>
+</html>
